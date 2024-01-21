@@ -1006,6 +1006,7 @@ RegisterNetEvent('qb-clothing:client:openMenu', function()
         {menu = "accessoires", label = Lang:t("menu.accessoires"), selected = false}
     })
 end)
+
 RegisterNetEvent('qb-clothing:client:reloadOutfits', function(myOutfits)
     SendNUIMessage({
         action = "reloadMyOutfits",

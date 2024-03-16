@@ -556,7 +556,7 @@ Config.OutfitChangers = {
 
 -- set isGang to true if the requiredJob is a gang
 Config.ClothingRooms = {
-    [1] = {requiredJob = 'police', isGang = false, coords = vector3(454.68, -990.89, 29.69), width = 2, length = 2, cameraLocation = vector4(454.42, -990.52, 30.69, 358.48)},
+    [1] = {requiredJob = 'police', isGang = false, coords = vector3(461.76, -999.65, 30.69), width = 2, length = 2, cameraLocation = vector4(461.26, -999.29, 30.69, 259.37)},
     [2] = {requiredJob = 'ambulance', isGang = false, coords = vector4(342.47, -586.15, 43.32, 342.56), width = 2, length = 2, cameraLocation = vector4(342.47, -586.15, 43.32, 342.56)},
     [3] = {requiredJob = 'police', isGang = false, coords = vector3(314.76, 671.78, 14.73), width = 2, length = 2, cameraLocation = vector4(317.62, 671.86, 14.73, 91.53)},
     [4] = {requiredJob = 'ambulance', isGang = false, coords = vector3(338.70, 659.61, 14.71), width = 2, length = 2, cameraLocation = vector4(339.27, 661.63, 14.71, 315.5)},

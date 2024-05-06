@@ -962,6 +962,13 @@ local function reloadSkin(health)
 
     if not canSkinReload() then
         QBCore.Functions.Notify("行動不能中にスキンのリロードなんてとんでもない！", "error")
+        TriggerServerEvent("qb-clothing:logCancelRefreshSkin")
+        return
+    end
+
+    if IsEntityOnFire(PlayerPedId()) then
+        QBCore.Functions.Notify("炎上中にスキンのリロードなんてとんでもない！", "error")
+        TriggerServerEvent("qb-clothing:logCancelRefreshSkin")
         return
     end
 

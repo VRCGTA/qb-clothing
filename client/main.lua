@@ -944,11 +944,26 @@ local function loadAnimDict( dict )
         Citizen.Wait( 5 )
     end
 end
+local function canSkinReload()
+    if IsPedInjured(PlayerPedId()) or IsPedInMeleeCombat(PlayerPedId()) or IsPedRagdoll(PlayerPedId()) then
+        return false
+    end
+    if IsPedInAnyVehicle(PlayerPedId(), false) then
+       return true
+    end
+
+    return not (not IsPedOnFoot(PlayerPedId()) or IsPedJumping(PlayerPedId()))
+end
 local function reloadSkin(health)
     local model
 
     local gender = QBCore.Functions.GetPlayerData().charinfo.gender
     local maxhealth = GetEntityMaxHealth(PlayerPedId())
+
+    if not canSkinReload() then
+        QBCore.Functions.Notify("行動不能中にスキンのリロードなんてとんでもない！", "error")
+        return
+    end
 
     if gender == 1 then -- Gender is ONE for FEMALE
         model = GetHashKey("mp_f_freemode_01") -- Female Model

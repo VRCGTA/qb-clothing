@@ -1,6 +1,7 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
 RegisterServerEvent("qb-clothing:logCancelRefreshSkin", function()
+    local src = source
     local Player = QBCore.Functions.GetPlayer(src)
     print("リフレッシュスキンキャンセル: " .. Player.PlayerData.charinfo.firstname .. " " .. Player.PlayerData.charinfo.lastname)
 end)

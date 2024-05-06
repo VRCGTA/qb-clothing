@@ -945,11 +945,16 @@ local function loadAnimDict( dict )
     end
 end
 local function canSkinReload()
+    PlayerData = QBCore.Functions.GetPlayerData()
     if IsPedInjured(PlayerPedId()) or IsPedInMeleeCombat(PlayerPedId()) or IsPedRagdoll(PlayerPedId()) then
         return false
     end
     if IsPedInAnyVehicle(PlayerPedId(), false) then
        return true
+    end
+
+    if PlayerData.metadata['inlaststand'] or PlayerData.metadata['isdead'] then
+        return false
     end
 
     return not (not IsPedOnFoot(PlayerPedId()) or IsPedJumping(PlayerPedId()))

@@ -953,7 +953,7 @@ local function canSkinReload()
        return true
     end
 
-    if PlayerData.metadata['inlaststand'] or PlayerData.metadata['isdead'] then
+    if PlayerData.condition.in_last_stand or PlayerData.condition.in_dead then
         return false
     end
 
